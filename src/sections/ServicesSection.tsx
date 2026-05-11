@@ -1,123 +1,100 @@
 import SectionTitle from "../components/ui/SectionTitle";
+import servicesData from "../data/services.json";
 
-const services = [
-  {
-    title: "Strategy & Consulting",
-    description: "We help you define a clear digital roadmap aligned with your business goals.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: "Web Development",
-    description: "High-performance websites and web apps built with modern technologies.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: "UI/UX Design",
-    description: "User-centered design that balances aesthetics with intuitive functionality.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: "Data & Analytics",
-    description: "Turn your data into actionable insights with custom analytics solutions.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: "Cloud Solutions",
-    description: "Scalable cloud infrastructure designed for reliability and cost efficiency.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: "Ongoing Support",
-    description: "Dedicated support and maintenance to keep your products running smoothly.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-];
+const iconMap: Record<string, React.ReactNode> = {
+  chart: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path
+        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+  code: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path
+        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+  design: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path
+        d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+  analytics: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path
+        d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+  cloud: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path
+        d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+  support: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path
+        d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+};
 
 interface ServicesSectionProps {
   limit?: number;
 }
 
 export default function ServicesSection({ limit }: ServicesSectionProps) {
-  const displayed = limit ? services.slice(0, limit) : services;
+  const items = limit ? servicesData.items.slice(0, limit) : servicesData.items;
 
   return (
     <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <SectionTitle
-          label="What We Do"
-          title="Services Built for Growth"
-          description="We offer end-to-end digital services tailored to your unique challenges."
+          label={servicesData.sectionLabel}
+          title={servicesData.sectionTitle}
+          description={servicesData.sectionDescription}
           center
         />
 
         <div className="mt-14 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-8">
-          {displayed.map((service) => (
+          {items.map((service) => (
             <div
               key={service.title}
               className="p-8 rounded-2xl border border-gray/10 hover:shadow-md transition-shadow bg-white"
             >
               <div className="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6">
-                {service.icon}
+                {iconMap[service.icon]}
               </div>
               <h3 className="text-lg font-semibold text-black mb-3">{service.title}</h3>
               <p className="text-gray text-sm leading-relaxed">{service.description}</p>

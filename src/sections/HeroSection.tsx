@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "../components/ui/Button";
+import heroData from "../data/hero.json";
 
 export default function HeroSection() {
   return (
@@ -8,19 +9,19 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-black/60" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 w-full">
-        <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Digital Solutions Agency</p>
+        <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">{heroData.tagline}</p>
         <h1 className="text-4xl tablet:text-6xl font-bold text-white leading-tight mb-6 max-w-3xl">
-          We Build Digital Products That Matter
+          {heroData.heading}
         </h1>
         <p className="text-white/75 text-lg tablet:text-xl max-w-xl leading-relaxed mb-10">
-          From strategy to launch, we partner with ambitious companies to create exceptional digital experiences.
+          {heroData.description}
         </p>
         <div className="flex flex-wrap gap-4">
-          <Button href="/services" variant="primary" size="lg">
-            Explore Services
+          <Button href={heroData.primaryButtonHref} variant="primary" size="lg">
+            {heroData.primaryButtonText}
           </Button>
-          <Button href="/contact" variant="white" size="lg">
-            Get in Touch
+          <Button href={heroData.secondaryButtonHref} variant="white" size="lg">
+            {heroData.secondaryButtonText}
           </Button>
         </div>
       </div>

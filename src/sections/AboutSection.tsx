@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "../components/ui/Button";
 import SectionTitle from "../components/ui/SectionTitle";
+import aboutData from "../data/about.json";
 
 export default function AboutSection() {
   return (
@@ -8,16 +9,12 @@ export default function AboutSection() {
       <div className="max-w-6xl mx-auto px-6 flex flex-col tablet:flex-row items-center gap-16">
         <div className="flex-1">
           <SectionTitle
-            label="Who We Are"
-            title="A Team Passionate About Digital Excellence"
-            description="Founded in 2014, Horizon has grown from a small design studio into a full-service digital agency trusted by companies worldwide. We combine creative thinking with technical expertise to deliver solutions that truly make a difference."
+            label={aboutData.sectionLabel}
+            title={aboutData.sectionTitle}
+            description={aboutData.description}
           />
           <ul className="mt-8 flex flex-col gap-3">
-            {[
-              "10+ years of industry experience",
-              "200+ successful projects delivered",
-              "Offices in Seoul, Singapore, and London",
-            ].map((item) => (
+            {aboutData.highlights.map((item) => (
               <li key={item} className="flex items-center gap-3 text-sm text-deep-gray">
                 <span className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
                   <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
@@ -35,7 +32,7 @@ export default function AboutSection() {
             ))}
           </ul>
           <div className="mt-10">
-            <Button href="/about">Learn Our Story</Button>
+            <Button href="/about">{aboutData.buttonText}</Button>
           </div>
         </div>
 

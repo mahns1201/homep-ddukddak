@@ -1,0 +1,37 @@
+{
+  "sectionLabel": "What We Do",
+  "sectionTitle": "Services Built for Growth",
+  "sectionDescription": "We offer end-to-end digital services tailored to your unique challenges.",
+  "items": [
+    {
+      "title": "Strategy & Consulting",
+      "description": "We help you define a clear digital roadmap aligned with your business goals.",
+      "icon": "chart"
+    },
+    {
+      "title": "Web Development",
+      "description": "High-performance websites and web apps built with modern technologies.",
+      "icon": "code"
+    },
+    {
+      "title": "UI/UX Design",
+      "description": "User-centered design that balances aesthetics with intuitive functionality.",
+      "icon": "design"
+    },
+    {
+      "title": "Data & Analytics",
+      "description": "Turn your data into actionable insights with custom analytics solutions.",
+      "icon": "analytics"
+    },
+    {
+      "title": "Cloud Solutions",
+      "description": "Scalable cloud infrastructure designed for reliability and cost efficiency.",
+      "icon": "cloud"
+    },
+    {
+      "title": "Ongoing Support",
+      "description": "Dedicated support and maintenance to keep your products running smoothly.",
+      "icon": "support"
+    }
+  ]
+}

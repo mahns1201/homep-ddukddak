@@ -1,0 +1,11 @@
+{
+  "sectionLabel": "Our Team",
+  "sectionTitle": "The People Behind Horizon",
+  "sectionDescription": "A diverse team of strategists, designers, and engineers united by a shared passion for great work.",
+  "members": [
+    { "name": "Sarah Kim", "role": "CEO & Founder", "image": "/images/team-sarah.svg" },
+    { "name": "James Park", "role": "CTO", "image": "/images/team-james.svg" },
+    { "name": "Emily Chen", "role": "Design Lead", "image": "/images/team-emily.svg" },
+    { "name": "Michael Lee", "role": "Head of Engineering", "image": "/images/team-michael.svg" }
+  ]
+}

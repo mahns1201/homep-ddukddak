@@ -1,0 +1,104 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: data
+    label: 사이트 콘텐츠
+    files:
+      - name: site
+        label: 사이트 기본 정보
+        file: src/data/site.json
+        fields:
+          - { label: 사이트 이름, name: siteName, widget: string }
+          - name: nav
+            label: 네비게이션 메뉴
+            widget: list
+            fields:
+              - { label: 메뉴명, name: label, widget: string }
+              - { label: 링크, name: href, widget: string }
+          - { label: CTA 버튼 텍스트, name: ctaButtonText, widget: string }
+          - { label: CTA 버튼 링크, name: ctaButtonHref, widget: string }
+
+      - name: hero
+        label: 히어로 섹션
+        file: src/data/hero.json
+        fields:
+          - { label: 태그라인, name: tagline, widget: string }
+          - { label: 메인 제목, name: heading, widget: string }
+          - { label: 설명, name: description, widget: text }
+          - { label: 첫 번째 버튼 텍스트, name: primaryButtonText, widget: string }
+          - { label: 첫 번째 버튼 링크, name: primaryButtonHref, widget: string }
+          - { label: 두 번째 버튼 텍스트, name: secondaryButtonText, widget: string }
+          - { label: 두 번째 버튼 링크, name: secondaryButtonHref, widget: string }
+
+      - name: about
+        label: 소개 섹션
+        file: src/data/about.json
+        fields:
+          - { label: 섹션 라벨, name: sectionLabel, widget: string }
+          - { label: 섹션 제목, name: sectionTitle, widget: string }
+          - { label: 설명, name: description, widget: text }
+          - name: highlights
+            label: 하이라이트 항목
+            widget: list
+            field: { label: 항목, name: item, widget: string }
+          - { label: 버튼 텍스트, name: buttonText, widget: string }
+
+      - name: services
+        label: 서비스 섹션
+        file: src/data/services.json
+        fields:
+          - { label: 섹션 라벨, name: sectionLabel, widget: string }
+          - { label: 섹션 제목, name: sectionTitle, widget: string }
+          - { label: 섹션 설명, name: sectionDescription, widget: text }
+          - name: items
+            label: 서비스 목록
+            widget: list
+            fields:
+              - { label: 서비스명, name: title, widget: string }
+              - { label: 설명, name: description, widget: text }
+              - label: 아이콘
+                name: icon
+                widget: select
+                options: [chart, code, design, analytics, cloud, support]
+
+      - name: stats
+        label: 통계 섹션
+        file: src/data/stats.json
+        fields:
+          - name: items
+            label: 통계 항목
+            widget: list
+            fields:
+              - { label: 수치, name: value, widget: string }
+              - { label: 설명, name: label, widget: string }
+
+      - name: team
+        label: 팀 섹션
+        file: src/data/team.json
+        fields:
+          - { label: 섹션 라벨, name: sectionLabel, widget: string }
+          - { label: 섹션 제목, name: sectionTitle, widget: string }
+          - { label: 섹션 설명, name: sectionDescription, widget: text }
+          - name: members
+            label: 팀원 목록
+            widget: list
+            fields:
+              - { label: 이름, name: name, widget: string }
+              - { label: 직책, name: role, widget: string }
+              - { label: 사진, name: image, widget: image }
+
+      - name: cta
+        label: CTA 섹션
+        file: src/data/cta.json
+        fields:
+          - { label: 제목, name: heading, widget: string }
+          - { label: 설명, name: description, widget: text }
+          - { label: 첫 번째 버튼 텍스트, name: primaryButtonText, widget: string }
+          - { label: 첫 번째 버튼 링크, name: primaryButtonHref, widget: string }
+          - { label: 두 번째 버튼 텍스트, name: secondaryButtonText, widget: string }
+          - { label: 두 번째 버튼 링크, name: secondaryButtonHref, widget: string }
