@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-labelledby="title desc">
+  <title id="title">James Park portrait</title>
+  <desc id="desc">Illustrated professional portrait for James Park.</desc>
+  <rect width="300" height="300" rx="150" fill="#e6f3eb"/>
+  <circle cx="150" cy="128" r="50" fill="#c98f72"/>
+  <path d="M98 112c14-54 94-62 110 0-38 8-72 8-110 0z" fill="#374151"/>
+  <rect x="78" y="194" width="144" height="108" rx="42" fill="#374151"/>
+  <rect x="132" y="188" width="36" height="56" rx="18" fill="#c98f72"/>
+  <path d="M118 214h64l-32 34z" fill="#52b788"/>
+</svg>

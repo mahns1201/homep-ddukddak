@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-labelledby="title desc">
+  <title id="title">Emily Chen portrait</title>
+  <desc id="desc">Illustrated professional portrait for Emily Chen.</desc>
+  <rect width="300" height="300" rx="150" fill="#f0f4f0"/>
+  <path d="M94 128c0-58 31-86 58-86s58 28 58 86v34H94z" fill="#1a1a1a"/>
+  <circle cx="152" cy="132" r="50" fill="#e6b89c"/>
+  <rect x="76" y="196" width="148" height="108" rx="44" fill="#52b788"/>
+  <rect x="132" y="184" width="40" height="54" rx="20" fill="#e6b89c"/>
+  <path d="M116 218h72l-36 38z" fill="#ffffff"/>
+</svg>
