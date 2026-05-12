@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "../ui/Button";
 import siteData from "../../data/site.json";
 
@@ -11,11 +11,24 @@ const mobileMenuId = "mobile-navigation";
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 30);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const transparent = !scrolled && !menuOpen;
 
   return (
-    <header className="w-full bg-white border-b border-gray-5/10 sticky top-0 z-50">
+    <header
+      className={`w-full fixed top-0 z-50 transition-colors duration-500 ${
+        transparent ? "bg-transparent" : "bg-white border-b border-gray-5/10"
+      }`}
+    >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="t3 text-primary">
+        <Link href="/" className={`t3 transition-colors ${transparent ? "text-white" : "text-primary"}`}>
           {siteData.siteName}
         </Link>
 
@@ -26,7 +39,9 @@ export default function Header() {
               key={link.href}
               href={link.href}
               className={`p2 transition-colors ${
-                pathname === link.href ? "text-primary text-active-underline" : "text-gray-7 hover:text-primary text-hover-primary"
+                pathname === link.href
+                  ? `text-active-underline ${transparent ? "text-white" : "text-primary"}`
+                  : `text-hover-primary ${transparent ? "text-white/80 hover:text-white" : "text-gray-7 hover:text-primary"}`
               }`}
             >
               {link.label}
@@ -35,7 +50,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden tablet:block">
-          <Button href={siteData.ctaButtonHref} size="sm">
+          <Button href={siteData.ctaButtonHref} size="sm" variant={transparent ? "white" : "primary"}>
             {siteData.ctaButtonText}
           </Button>
         </div>
@@ -43,7 +58,7 @@ export default function Header() {
         {/* Mobile hamburger */}
         <button
           type="button"
-          className="tablet:hidden p-2 text-gray-7 cursor-pointer"
+          className={`tablet:hidden p-2 cursor-pointer transition-colors ${transparent ? "text-white" : "text-gray-7"}`}
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label="Toggle menu"
           aria-controls={mobileMenuId}
@@ -61,7 +76,10 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div id={mobileMenuId} className="tablet:hidden bg-white border-t border-gray-5/10 px-6 py-4 flex flex-col gap-4">
+        <div
+          id={mobileMenuId}
+          className="tablet:hidden bg-white border-t border-gray-5/10 px-6 py-4 flex flex-col gap-4"
+        >
           {siteData.nav.map((link) => (
             <Link
               key={link.href}
