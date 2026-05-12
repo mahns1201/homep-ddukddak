@@ -25,8 +25,8 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`p4 transition-colors ${
-                pathname === link.href ? "text-primary" : "text-deep-gray hover:text-primary text-hover-primary"
+              className={`p2 transition-colors ${
+                pathname === link.href ? "text-primary text-active-underline" : "text-deep-gray hover:text-primary text-hover-primary"
               }`}
             >
               {link.label}

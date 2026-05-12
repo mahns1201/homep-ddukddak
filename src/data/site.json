@@ -1,11 +1,10 @@
 {
-  "siteName": "Horizon",
+  "siteName": "페이지뚝딱",
   "nav": [
-    { "label": "Home", "href": "/" },
-    { "label": "About", "href": "/about" },
-    { "label": "Services", "href": "/services" },
-    { "label": "Contact", "href": "/contact" }
+    { "label": "소개", "href": "/about" },
+    { "label": "서비스", "href": "/services" },
+    { "label": "템플릿", "href": "/templates" }
   ],
-  "ctaButtonText": "Get in Touch",
+  "ctaButtonText": "문의하기",
   "ctaButtonHref": "/contact"
 }
