@@ -19,7 +19,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const transparent = !scrolled && !menuOpen;
+  const transparent = pathname === "/" && !scrolled && !menuOpen;
 
   return (
     <header
