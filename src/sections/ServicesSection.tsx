@@ -96,8 +96,8 @@ export default function ServicesSection({ limit }: ServicesSectionProps) {
               <div className="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6">
                 {iconMap[service.icon]}
               </div>
-              <h3 className="text-lg font-semibold text-black mb-3">{service.title}</h3>
-              <p className="text-gray text-sm leading-relaxed">{service.description}</p>
+              <h3 className="t3 text-black mb-3">{service.title}</h3>
+              <p className="p4 text-gray">{service.description}</p>
             </div>
           ))}
         </div>

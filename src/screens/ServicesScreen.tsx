@@ -54,9 +54,9 @@ export default function ServicesScreen() {
           <div className="mt-14 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-4 gap-8">
             {process.map((item) => (
               <div key={item.step} className="relative">
-                <p className="text-5xl font-bold text-primary/20 mb-4">{item.step}</p>
-                <h3 className="text-lg font-semibold text-black mb-3">{item.title}</h3>
-                <p className="text-gray text-sm leading-relaxed">{item.description}</p>
+                <p className="t1 text-primary/20 mb-4">{item.step}</p>
+                <h3 className="t3 text-black mb-3">{item.title}</h3>
+                <p className="p4 text-gray">{item.description}</p>
               </div>
             ))}
           </div>

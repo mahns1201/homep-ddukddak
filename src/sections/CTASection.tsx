@@ -5,8 +5,8 @@ export default function CTASection() {
   return (
     <section className="py-24 bg-light-gray">
       <div className="max-w-2xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-black mb-4">{ctaData.heading}</h2>
-        <p className="text-gray text-lg leading-relaxed mb-10">{ctaData.description}</p>
+        <h2 className="t2 text-black mb-4">{ctaData.heading}</h2>
+        <p className="p1 text-gray mb-10">{ctaData.description}</p>
         <div className="flex flex-wrap justify-center gap-4">
           <Button href={ctaData.primaryButtonHref} size="lg">
             {ctaData.primaryButtonText}

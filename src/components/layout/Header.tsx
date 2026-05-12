@@ -15,17 +15,17 @@ export default function Header() {
   return (
     <header className="w-full bg-white border-b border-gray/10 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold text-primary">
+        <Link href="/" className="t3 text-primary">
           {siteData.siteName}
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden tablet:flex items-center gap-8">
+        <nav className="hidden tablet:flex items-center gap-12">
           {siteData.nav.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors ${
+              className={`p4 transition-colors ${
                 pathname === link.href ? "text-primary" : "text-deep-gray hover:text-primary text-hover-primary"
               }`}
             >
@@ -67,7 +67,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className={`text-sm font-medium ${pathname === link.href ? "text-primary" : "text-deep-gray"}`}
+              className={`p4 ${pathname === link.href ? "text-primary" : "text-deep-gray"}`}
             >
               {link.label}
             </Link>

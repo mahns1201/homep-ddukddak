@@ -43,8 +43,8 @@ export default function AboutScreen() {
               },
             ].map((value) => (
               <div key={value.title} className="p-8 rounded-2xl bg-light-gray">
-                <h3 className="text-lg font-semibold text-black mb-3">{value.title}</h3>
-                <p className="text-gray text-sm leading-relaxed">{value.description}</p>
+                <h3 className="t3 text-black mb-3">{value.title}</h3>
+                <p className="p4 text-gray">{value.description}</p>
               </div>
             ))}
           </div>

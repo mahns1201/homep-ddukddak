@@ -96,8 +96,8 @@ export default function ContactScreen() {
                   {info.icon}
                 </div>
                 <div>
-                  <p className="text-xs text-gray font-medium uppercase tracking-wider mb-1">{info.label}</p>
-                  <p className="text-deep-gray text-sm">{info.value}</p>
+                  <p className="p6 text-gray uppercase tracking-wider mb-1">{info.label}</p>
+                  <p className="p4 text-deep-gray">{info.value}</p>
                 </div>
               </div>
             ))}
@@ -110,7 +110,7 @@ export default function ContactScreen() {
           >
             <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-medium text-deep-gray" htmlFor="name">
+                <label className="p4 text-deep-gray" htmlFor="name">
                   Name
                 </label>
                 <input
@@ -119,11 +119,11 @@ export default function ContactScreen() {
                   type="text"
                   placeholder="John Doe"
                   required
-                  className="border border-gray/20 rounded-lg px-4 py-3 text-sm text-black placeholder:text-gray focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  className="border border-gray/20 rounded-lg px-4 py-3 p4 text-black placeholder:text-gray focus:outline-none focus:ring-2 focus:ring-primary/30"
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-medium text-deep-gray" htmlFor="email">
+                <label className="p4 text-deep-gray" htmlFor="email">
                   Email
                 </label>
                 <input
@@ -132,12 +132,12 @@ export default function ContactScreen() {
                   type="email"
                   placeholder="john@company.com"
                   required
-                  className="border border-gray/20 rounded-lg px-4 py-3 text-sm text-black placeholder:text-gray focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  className="border border-gray/20 rounded-lg px-4 py-3 p4 text-black placeholder:text-gray focus:outline-none focus:ring-2 focus:ring-primary/30"
                 />
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-sm font-medium text-deep-gray" htmlFor="subject">
+              <label className="p4 text-deep-gray" htmlFor="subject">
                 Subject
               </label>
               <input
@@ -145,11 +145,11 @@ export default function ContactScreen() {
                 name="subject"
                 type="text"
                 placeholder="Project Inquiry"
-                className="border border-gray/20 rounded-lg px-4 py-3 text-sm text-black placeholder:text-gray focus:outline-none focus:ring-2 focus:ring-primary/30"
+                className="border border-gray/20 rounded-lg px-4 py-3 p4 text-black placeholder:text-gray focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-sm font-medium text-deep-gray" htmlFor="message">
+              <label className="p4 text-deep-gray" htmlFor="message">
                 Message
               </label>
               <textarea
@@ -158,7 +158,7 @@ export default function ContactScreen() {
                 rows={5}
                 placeholder="Tell us about your project..."
                 required
-                className="border border-gray/20 rounded-lg px-4 py-3 text-sm text-black placeholder:text-gray focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none"
+                className="border border-gray/20 rounded-lg px-4 py-3 p4 text-black placeholder:text-gray focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none"
               />
             </div>
             <Button type="submit" size="lg">
