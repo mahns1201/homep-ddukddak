@@ -29,7 +29,7 @@ export default function ServicesScreen() {
   return (
     <>
       {/* Page Hero */}
-      <section className="py-24 bg-light-gray text-center">
+      <section className="py-24 bg-gray-3 text-center">
         <div className="max-w-3xl mx-auto px-6">
           <SectionTitle
             label="Services"
@@ -43,7 +43,7 @@ export default function ServicesScreen() {
       <ServicesSection />
 
       {/* Process */}
-      <section className="py-24 bg-light-gray">
+      <section className="py-24 bg-gray-3">
         <div className="max-w-6xl mx-auto px-6">
           <SectionTitle
             label="How We Work"
@@ -55,8 +55,8 @@ export default function ServicesScreen() {
             {process.map((item) => (
               <div key={item.step} className="relative">
                 <p className="t1 text-primary/20 mb-4">{item.step}</p>
-                <h3 className="t3 text-black mb-3">{item.title}</h3>
-                <p className="p4 text-gray">{item.description}</p>
+                <h3 className="t3 text-gray-9 mb-3">{item.title}</h3>
+                <p className="p4 text-gray-5">{item.description}</p>
               </div>
             ))}
           </div>

@@ -12,7 +12,7 @@ export default function HeroSection() {
         className="object-cover"
         priority
       />
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-gray-9/70" />
 
       <div className="relative max-w-6xl mx-auto px-6 w-full">
         <p className="t3 text-white tracking-widest mb-4">{heroData.tagline}</p>

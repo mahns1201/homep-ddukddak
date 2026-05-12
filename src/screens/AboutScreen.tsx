@@ -8,7 +8,7 @@ export default function AboutScreen() {
   return (
     <>
       {/* Page Hero */}
-      <section className="py-24 bg-light-gray">
+      <section className="py-24 bg-gray-3">
         <div className="max-w-6xl mx-auto px-6 flex flex-col tablet:flex-row items-center gap-16">
           <div className="flex-1">
             <SectionTitle
@@ -42,9 +42,9 @@ export default function AboutScreen() {
                 description: "We ship, learn, and iterate. Good enough is never enough.",
               },
             ].map((value) => (
-              <div key={value.title} className="p-8 rounded-2xl bg-light-gray">
-                <h3 className="t3 text-black mb-3">{value.title}</h3>
-                <p className="p4 text-gray">{value.description}</p>
+              <div key={value.title} className="p-8 rounded-2xl bg-gray-3">
+                <h3 className="t3 text-gray-9 mb-3">{value.title}</h3>
+                <p className="p4 text-gray-5">{value.description}</p>
               </div>
             ))}
           </div>

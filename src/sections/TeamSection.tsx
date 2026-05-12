@@ -19,8 +19,8 @@ export default function TeamSection() {
               <div className="relative w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 shadow-md">
                 <Image src={member.image} alt={member.name} fill className="object-cover" />
               </div>
-              <p className="p2 text-black">{member.name}</p>
-              <p className="p4 text-gray mt-1">{member.role}</p>
+              <p className="p2 text-gray-9">{member.name}</p>
+              <p className="p4 text-gray-5 mt-1">{member.role}</p>
             </div>
           ))}
         </div>

@@ -13,7 +13,7 @@ interface ButtonProps {
 const variants = {
   primary: "bg-primary text-white hover:bg-secondary",
   outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white",
-  white: "bg-white text-primary hover:bg-light-gray",
+  white: "bg-white text-primary hover:bg-gray-3",
 };
 
 const sizes = {

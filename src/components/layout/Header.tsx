@@ -13,7 +13,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="w-full bg-white border-b border-gray/10 sticky top-0 z-50">
+    <header className="w-full bg-white border-b border-gray-5/10 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="t3 text-primary">
           {siteData.siteName}
@@ -26,7 +26,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               className={`p2 transition-colors ${
-                pathname === link.href ? "text-primary text-active-underline" : "text-deep-gray hover:text-primary text-hover-primary"
+                pathname === link.href ? "text-primary text-active-underline" : "text-gray-7 hover:text-primary text-hover-primary"
               }`}
             >
               {link.label}
@@ -43,7 +43,7 @@ export default function Header() {
         {/* Mobile hamburger */}
         <button
           type="button"
-          className="tablet:hidden p-2 text-deep-gray cursor-pointer"
+          className="tablet:hidden p-2 text-gray-7 cursor-pointer"
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label="Toggle menu"
           aria-controls={mobileMenuId}
@@ -61,13 +61,13 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div id={mobileMenuId} className="tablet:hidden bg-white border-t border-gray/10 px-6 py-4 flex flex-col gap-4">
+        <div id={mobileMenuId} className="tablet:hidden bg-white border-t border-gray-5/10 px-6 py-4 flex flex-col gap-4">
           {siteData.nav.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className={`p4 ${pathname === link.href ? "text-primary" : "text-deep-gray"}`}
+              className={`p4 ${pathname === link.href ? "text-primary" : "text-gray-7"}`}
             >
               {link.label}
             </Link>
