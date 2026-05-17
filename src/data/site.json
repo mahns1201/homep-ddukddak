@@ -1,5 +1,5 @@
 {
-  "siteName": "페이지뚝딱",
+  "siteName": "홈피뚝딱",
   "nav": [
     { "label": "소개", "href": "/about" },
     { "label": "서비스", "href": "/services" },
