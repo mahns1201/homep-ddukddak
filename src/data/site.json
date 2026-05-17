@@ -1,10 +1,34 @@
 {
   "siteName": "홈피뚝딱",
-  "nav": [
-    { "label": "소개", "href": "/about" },
-    { "label": "서비스", "href": "/services" },
-    { "label": "템플릿", "href": "/templates" }
-  ],
+  "header": {
+    "links": [
+      { "label": "소개", "href": "/about" },
+      { "label": "서비스", "href": "/services" },
+      { "label": "템플릿", "href": "/templates" }
+    ]
+  },
+  "footer": {
+    "links": [
+      {
+        "heading": "홈피뚝딱",
+        "items": [
+          { "label": "소개", "href": "/about" },
+          { "label": "서비스", "href": "/services" },
+          { "label": "템플릿", "href": "/templates" },
+          { "label": "문의하기", "href": "/contact" }
+        ]
+      },
+      {
+        "heading": "고객지원",
+        "items": [
+          { "label": "이용약관", "href": "/services" },
+          { "label": "환불 및 취소 정책", "href": "/services" },
+          { "label": "자주 묻는 질문", "href": "/services" }
+        ]
+      }
+    ],
+    "copyright": "© 2026 홈피뚝딱. All rights reserved."
+  },
   "ctaButtonText": "문의하기",
   "ctaButtonHref": "/contact"
 }

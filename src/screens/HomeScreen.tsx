@@ -8,8 +8,8 @@ export default function HomeScreen() {
   return (
     <>
       <HeroSection />
-      <ServicesSection limit={3} />
       <AboutSection />
+      <ServicesSection limit={3} />
       <StatsSection />
       <CTASection />
     </>

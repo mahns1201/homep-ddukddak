@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -30,19 +29,17 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/">
-          <Image
+          <img
             src="/text-logo.svg"
             alt={siteData.siteName}
             width={140}
-            height={36}
-            priority
             className={`transition-opacity ${transparent ? "brightness-0 invert " : ""}`}
           />
         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden tablet:flex items-center gap-12">
-          {siteData.nav.map((link) => (
+          {siteData.header.links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -88,7 +85,7 @@ export default function Header() {
           id={mobileMenuId}
           className="tablet:hidden bg-white border-t border-gray-5/10 px-6 py-4 flex flex-col gap-4"
         >
-          {siteData.nav.map((link) => (
+          {siteData.header.links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
