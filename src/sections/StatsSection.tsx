@@ -1,4 +1,4 @@
-import statsData from "../data/stats.json";
+import statsData from "../data/stats-section.json";
 
 export default function StatsSection() {
   return (

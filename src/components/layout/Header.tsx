@@ -55,8 +55,8 @@ export default function Header() {
         </nav>
 
         <div className="hidden tablet:block">
-          <Button href={siteData.ctaButtonHref} size="sm" variant={transparent ? "white" : "primary"}>
-            {siteData.ctaButtonText}
+          <Button href={siteData.header.cta.href} size="sm" variant={transparent ? "white" : "primary"}>
+            {siteData.header.cta.label}
           </Button>
         </div>
 
@@ -95,8 +95,8 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <Button href={siteData.ctaButtonHref} size="sm">
-            {siteData.ctaButtonText}
+          <Button href={siteData.header.cta.href} size="sm">
+            {siteData.header.cta.label}
           </Button>
         </div>
       )}

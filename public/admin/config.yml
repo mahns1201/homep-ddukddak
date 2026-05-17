@@ -14,61 +14,170 @@ collections:
         file: src/data/site.json
         fields:
           - { label: 사이트 이름, name: siteName, widget: string }
-          - name: nav
-            label: 네비게이션 메뉴
-            widget: list
+          - name: header
+            label: 헤더
+            widget: object
             fields:
-              - { label: 메뉴명, name: label, widget: string }
-              - { label: 링크, name: href, widget: string }
-          - { label: CTA 버튼 텍스트, name: ctaButtonText, widget: string }
-          - { label: CTA 버튼 링크, name: ctaButtonHref, widget: string }
+              - name: links
+                label: 네비게이션 메뉴
+                widget: list
+                fields:
+                  - { label: 메뉴명, name: label, widget: string }
+                  - { label: 링크, name: href, widget: string }
+              - name: cta
+                label: CTA 버튼
+                widget: object
+                fields:
+                  - { label: 버튼 텍스트, name: label, widget: string }
+                  - { label: 버튼 링크, name: href, widget: string }
+          - name: footer
+            label: 푸터
+            widget: object
+            fields:
+              - name: links
+                label: 링크 그룹
+                widget: list
+                fields:
+                  - { label: 그룹 제목, name: heading, widget: string }
+                  - name: items
+                    label: 링크 목록
+                    widget: list
+                    fields:
+                      - { label: 메뉴명, name: label, widget: string }
+                      - { label: 링크, name: href, widget: string }
+              - { label: 저작권 문구, name: copyright, widget: string }
 
-      - name: hero
-        label: 히어로 섹션
-        file: src/data/hero.json
+      - name: home
+        label: 홈 화면
+        file: src/data/home-screen.json
         fields:
-          - { label: 태그라인, name: tagline, widget: string }
-          - { label: 메인 제목, name: heading, widget: string }
-          - { label: 설명, name: description, widget: text }
-          - { label: 첫 번째 버튼 텍스트, name: primaryButtonText, widget: string }
-          - { label: 첫 번째 버튼 링크, name: primaryButtonHref, widget: string }
-          - { label: 두 번째 버튼 텍스트, name: secondaryButtonText, widget: string }
-          - { label: 두 번째 버튼 링크, name: secondaryButtonHref, widget: string }
+          - name: hero
+            label: 히어로 섹션
+            widget: object
+            fields:
+              - { label: 태그라인, name: tagline, widget: string }
+              - { label: 메인 제목, name: heading, widget: string }
+              - { label: 설명, name: description, widget: text }
+              - name: images
+                label: 배경 이미지 목록
+                widget: list
+                fields:
+                  - { label: 이미지, name: src, widget: image }
+                  - { label: 대체 텍스트, name: alt, widget: string }
+          - name: about
+            label: 소개 섹션
+            widget: object
+            fields:
+              - { label: 섹션 라벨, name: sectionLabel, widget: string }
+              - { label: 섹션 제목, name: sectionTitle, widget: string }
+              - { label: 설명, name: description, widget: text }
+              - name: highlights
+                label: 하이라이트 항목
+                widget: list
+                field: { label: 항목, name: item, widget: string }
+              - { label: 버튼 텍스트, name: buttonText, widget: string }
+          - name: service
+            label: 서비스 섹션
+            widget: object
+            fields:
+              - { label: 섹션 라벨, name: sectionLabel, widget: string }
+              - { label: 섹션 제목, name: sectionTitle, widget: string }
+              - { label: 섹션 설명, name: sectionDescription, widget: text }
+              - name: items
+                label: 서비스 목록
+                widget: list
+                fields:
+                  - { label: 서비스명, name: title, widget: string }
+                  - { label: 설명, name: description, widget: text }
+                  - label: 아이콘
+                    name: icon
+                    widget: select
+                    options: [chart, code, design, analytics, cloud, support]
 
       - name: about
-        label: 소개 섹션
-        file: src/data/about.json
+        label: 소개 화면
+        file: src/data/about-screen.json
         fields:
-          - { label: 섹션 라벨, name: sectionLabel, widget: string }
-          - { label: 섹션 제목, name: sectionTitle, widget: string }
-          - { label: 설명, name: description, widget: text }
-          - name: highlights
-            label: 하이라이트 항목
-            widget: list
-            field: { label: 항목, name: item, widget: string }
-          - { label: 버튼 텍스트, name: buttonText, widget: string }
+          - name: hero
+            label: 히어로 섹션
+            widget: object
+            fields:
+              - { label: 라벨, name: label, widget: string }
+              - { label: 제목, name: title, widget: string }
+              - { label: 설명, name: description, widget: text }
+          - name: section1
+            label: 가치 섹션
+            widget: object
+            fields:
+              - { label: 라벨, name: label, widget: string }
+              - { label: 제목, name: title, widget: string }
+              - name: items
+                label: 항목 목록
+                widget: list
+                fields:
+                  - { label: 제목, name: title, widget: string }
+                  - { label: 설명, name: description, widget: text }
+          - name: section2
+            label: 팀 섹션
+            widget: object
+            fields:
+              - { label: 섹션 라벨, name: sectionLabel, widget: string }
+              - { label: 섹션 제목, name: sectionTitle, widget: string }
+              - { label: 섹션 설명, name: sectionDescription, widget: text }
+              - name: members
+                label: 팀원 목록
+                widget: list
+                fields:
+                  - { label: 이름, name: name, widget: string }
+                  - { label: 직책, name: role, widget: string }
+                  - { label: 사진, name: image, widget: image }
 
       - name: services
-        label: 서비스 섹션
-        file: src/data/services.json
+        label: 서비스 화면
+        file: src/data/services-screen.json
         fields:
-          - { label: 섹션 라벨, name: sectionLabel, widget: string }
-          - { label: 섹션 제목, name: sectionTitle, widget: string }
-          - { label: 섹션 설명, name: sectionDescription, widget: text }
-          - name: items
-            label: 서비스 목록
-            widget: list
+          - name: hero
+            label: 히어로 섹션
+            widget: object
             fields:
-              - { label: 서비스명, name: title, widget: string }
+              - { label: 라벨, name: label, widget: string }
+              - { label: 제목, name: title, widget: string }
               - { label: 설명, name: description, widget: text }
-              - label: 아이콘
-                name: icon
-                widget: select
-                options: [chart, code, design, analytics, cloud, support]
+          - name: section1
+            label: 서비스 목록 섹션
+            widget: object
+            fields:
+              - { label: 섹션 라벨, name: sectionLabel, widget: string }
+              - { label: 섹션 제목, name: sectionTitle, widget: string }
+              - { label: 섹션 설명, name: sectionDescription, widget: text }
+              - name: items
+                label: 서비스 목록
+                widget: list
+                fields:
+                  - { label: 서비스명, name: title, widget: string }
+                  - { label: 설명, name: description, widget: text }
+                  - label: 아이콘
+                    name: icon
+                    widget: select
+                    options: [chart, code, design, analytics, cloud, support]
+          - name: section2
+            label: 진행 방식 섹션
+            widget: object
+            fields:
+              - { label: 라벨, name: label, widget: string }
+              - { label: 제목, name: title, widget: string }
+              - { label: 설명, name: description, widget: text }
+              - name: steps
+                label: 단계 목록
+                widget: list
+                fields:
+                  - { label: 단계 번호, name: step, widget: string }
+                  - { label: 제목, name: title, widget: string }
+                  - { label: 설명, name: description, widget: text }
 
       - name: stats
         label: 통계 섹션
-        file: src/data/stats.json
+        file: src/data/stats-section.json
         fields:
           - name: items
             label: 통계 항목
@@ -77,24 +186,9 @@ collections:
               - { label: 수치, name: value, widget: string }
               - { label: 설명, name: label, widget: string }
 
-      - name: team
-        label: 팀 섹션
-        file: src/data/team.json
-        fields:
-          - { label: 섹션 라벨, name: sectionLabel, widget: string }
-          - { label: 섹션 제목, name: sectionTitle, widget: string }
-          - { label: 섹션 설명, name: sectionDescription, widget: text }
-          - name: members
-            label: 팀원 목록
-            widget: list
-            fields:
-              - { label: 이름, name: name, widget: string }
-              - { label: 직책, name: role, widget: string }
-              - { label: 사진, name: image, widget: image }
-
       - name: cta
         label: CTA 섹션
-        file: src/data/cta.json
+        file: src/data/cta-section.json
         fields:
           - { label: 제목, name: heading, widget: string }
           - { label: 설명, name: description, widget: text }

@@ -1,47 +1,28 @@
 import Image from "next/image";
 import SectionTitle from "../components/ui/SectionTitle";
 import StatsSection from "../sections/StatsSection";
-import TeamSection from "../sections/TeamSection";
 import CTASection from "../sections/CTASection";
+import aboutPageData from "../data/about-screen.json";
 
 export default function AboutScreen() {
   return (
     <>
-      {/* Page Hero */}
-      <section className="py-24 bg-gray-3">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col tablet:flex-row items-center gap-16">
-          <div className="flex-1">
-            <SectionTitle
-              label="Our Story"
-              title="Built on a Belief That Technology Should Empower People"
-              description="Horizon was founded in 2014 with a simple idea: technology should make life better. Today, we are a global team of 80+ people working with leading companies across industries."
-            />
-          </div>
-          <div className="flex-1 w-full rounded-2xl overflow-hidden shadow-lg aspect-[4/3] relative">
-            <Image src="/images/about-story.svg" alt="Our story" fill className="object-cover" />
-          </div>
+      <section className="py-24 bg-gray-3 text-center">
+        <div className="max-w-3xl mx-auto px-6">
+          <SectionTitle
+            label={aboutPageData.hero.label}
+            title={aboutPageData.hero.title}
+            description={aboutPageData.hero.description}
+            center
+          />
         </div>
       </section>
 
-      {/* Values */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <SectionTitle label="Our Values" title="What We Stand For" center />
+          <SectionTitle label={aboutPageData.section1.label} title={aboutPageData.section1.title} center />
           <div className="mt-14 grid grid-cols-1 tablet:grid-cols-3 gap-8">
-            {[
-              {
-                title: "People First",
-                description: "We build tools for humans, not metrics. User experience is never an afterthought.",
-              },
-              {
-                title: "Radical Transparency",
-                description: "Honest communication, clear timelines, and no surprises. Always.",
-              },
-              {
-                title: "Continuous Improvement",
-                description: "We ship, learn, and iterate. Good enough is never enough.",
-              },
-            ].map((value) => (
+            {aboutPageData.section1.items.map((value) => (
               <div key={value.title} className="p-8 rounded-2xl bg-gray-3">
                 <h3 className="t3 text-gray-9 mb-3">{value.title}</h3>
                 <p className="p4 text-gray-5">{value.description}</p>
@@ -52,7 +33,30 @@ export default function AboutScreen() {
       </section>
 
       <StatsSection />
-      <TeamSection />
+
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <SectionTitle
+            label={aboutPageData.section2.sectionLabel}
+            title={aboutPageData.section2.sectionTitle}
+            description={aboutPageData.section2.sectionDescription}
+            center
+          />
+
+          <div className="mt-14 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-4 gap-8">
+            {aboutPageData.section2.members.map((member) => (
+              <div key={member.name} className="text-center">
+                <div className="relative w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 shadow-md">
+                  <Image src={member.image} alt={member.name} fill className="object-cover" />
+                </div>
+                <p className="p2 text-gray-9">{member.name}</p>
+                <p className="p4 text-gray-5 mt-1">{member.role}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CTASection />
     </>
   );

@@ -1,0 +1,8 @@
+{
+  "heading": "홈페이지, 이제 고민하지 마세요",
+  "description": "어떤 홈페이지가 필요한지 말씀해 주시면, 빠르게 시작할 수 있도록 도와드립니다.",
+  "primaryButtonText": "문의하기",
+  "primaryButtonHref": "/contact",
+  "secondaryButtonText": "서비스 보기",
+  "secondaryButtonHref": "/services"
+}

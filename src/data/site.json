@@ -5,7 +5,11 @@
       { "label": "소개", "href": "/about" },
       { "label": "서비스", "href": "/services" },
       { "label": "템플릿", "href": "/templates" }
-    ]
+    ],
+    "cta": {
+      "label": "문의하기",
+      "href": "/contact"
+    }
   },
   "footer": {
     "links": [
@@ -28,7 +32,5 @@
       }
     ],
     "copyright": "© 2026 홈피뚝딱. All rights reserved."
-  },
-  "ctaButtonText": "문의하기",
-  "ctaButtonHref": "/contact"
+  }
 }

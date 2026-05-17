@@ -1,58 +1,57 @@
 import SectionTitle from "../components/ui/SectionTitle";
-import ServicesSection from "../sections/ServicesSection";
 import CTASection from "../sections/CTASection";
-
-const process = [
-  {
-    step: "01",
-    title: "Discovery",
-    description: "We start by understanding your goals, users, and constraints through workshops and research.",
-  },
-  {
-    step: "02",
-    title: "Strategy",
-    description: "We define a clear roadmap, scope, and success metrics before writing a single line of code.",
-  },
-  {
-    step: "03",
-    title: "Design & Build",
-    description: "Our designers and engineers work in tandem to deliver high-quality, tested solutions.",
-  },
-  {
-    step: "04",
-    title: "Launch & Grow",
-    description: "We support the launch and continue optimizing based on real user data and feedback.",
-  },
-];
+import servicesScreenData from "../data/services-screen.json";
 
 export default function ServicesScreen() {
   return (
     <>
-      {/* Page Hero */}
       <section className="py-24 bg-gray-3 text-center">
         <div className="max-w-3xl mx-auto px-6">
           <SectionTitle
-            label="Services"
-            title="Everything You Need to Succeed Online"
-            description="From initial strategy to ongoing support, we offer a full suite of digital services designed to help your business grow."
+            label={servicesScreenData.hero.label}
+            title={servicesScreenData.hero.title}
+            description={servicesScreenData.hero.description}
             center
           />
         </div>
       </section>
 
-      <ServicesSection />
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <SectionTitle
+            label={servicesScreenData.section1.sectionLabel}
+            title={servicesScreenData.section1.sectionTitle}
+            description={servicesScreenData.section1.sectionDescription}
+            center
+          />
 
-      {/* Process */}
+          <div className="mt-14 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-8">
+            {servicesScreenData.section1.items.map((service) => (
+              <div
+                key={service.title}
+                className="p-8 rounded-2xl border border-gray-5/10 hover:shadow-md transition-shadow bg-white"
+              >
+                <div className="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6">
+                  {service.icon}
+                </div>
+                <h3 className="t3 text-gray-9 mb-3">{service.title}</h3>
+                <p className="p4 text-gray-5">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 bg-gray-3">
         <div className="max-w-6xl mx-auto px-6">
           <SectionTitle
-            label="How We Work"
-            title="Our Process"
-            description="A proven four-step approach that delivers results every time."
+            label={servicesScreenData.section2.label}
+            title={servicesScreenData.section2.title}
+            description={servicesScreenData.section2.description}
             center
           />
           <div className="mt-14 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-4 gap-8">
-            {process.map((item) => (
+            {servicesScreenData.section2.steps.map((item) => (
               <div key={item.step} className="relative">
                 <p className="t1 text-primary/20 mb-4">{item.step}</p>
                 <h3 className="t3 text-gray-9 mb-3">{item.title}</h3>

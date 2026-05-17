@@ -1,5 +1,5 @@
 import Button from "../components/ui/Button";
-import ctaData from "../data/cta.json";
+import ctaData from "../data/cta-section.json";
 
 export default function CTASection() {
   return (
