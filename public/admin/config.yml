@@ -161,7 +161,21 @@ collections:
                     widget: select
                     options: [chart, code, design, analytics, cloud, support]
           - name: section2
-            label: 진행 방식 섹션
+            label: 진행 방식 섹션 (템플릿 기반)
+            widget: object
+            fields:
+              - { label: 라벨, name: label, widget: string }
+              - { label: 제목, name: title, widget: string }
+              - { label: 설명, name: description, widget: text }
+              - name: steps
+                label: 단계 목록
+                widget: list
+                fields:
+                  - { label: 단계 번호, name: step, widget: string }
+                  - { label: 제목, name: title, widget: string }
+                  - { label: 설명, name: description, widget: text }
+          - name: section3
+            label: 진행 방식 섹션 (커스텀)
             widget: object
             fields:
               - { label: 라벨, name: label, widget: string }

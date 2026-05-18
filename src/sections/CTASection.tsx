@@ -11,9 +11,6 @@ export default function CTASection() {
           <Button href={ctaData.primaryButtonHref} size="lg">
             {ctaData.primaryButtonText}
           </Button>
-          <Button href={ctaData.secondaryButtonHref} variant="outline" size="lg">
-            {ctaData.secondaryButtonText}
-          </Button>
         </div>
       </div>
     </section>

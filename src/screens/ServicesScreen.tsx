@@ -63,6 +63,26 @@ export default function ServicesScreen() {
         </div>
       </section>
 
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <SectionTitle
+            label={servicesScreenData.section3.label}
+            title={servicesScreenData.section3.title}
+            description={servicesScreenData.section3.description}
+            center
+          />
+          <div className="mt-14 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-4 gap-8">
+            {servicesScreenData.section3.steps.map((item) => (
+              <div key={item.step} className="relative">
+                <p className="t1 text-primary/20 mb-4">{item.step}</p>
+                <h3 className="t3 text-gray-9 mb-3">{item.title}</h3>
+                <p className="p4 text-gray-5">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CTASection />
     </>
   );
