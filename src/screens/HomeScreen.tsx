@@ -5,6 +5,8 @@ import Carousel from "../components/ui/Carousel";
 import homeScreenData from "../data/home-screen.json";
 import SectionTitle from "../components/ui/SectionTitle";
 import Button from "../components/ui/Button";
+import { iconMap } from "../components/ui/icons";
+import servicesScreenData from "../data/services-screen.json";
 
 export default function HomeScreen() {
   return (
@@ -59,29 +61,29 @@ export default function HomeScreen() {
         </div>
       </section>
 
+      <StatsSection />
+
+      {/* 서비스 소개 */}
       <section className="py-24 bg-white">
+        <SectionTitle
+          label={servicesScreenData.section1.sectionLabel}
+          title={servicesScreenData.section1.sectionTitle}
+          description={servicesScreenData.section1.sectionDescription}
+          center
+        />
+
         <div className="max-w-6xl mx-auto px-6">
-          <SectionTitle
-            label={homeScreenData.service.sectionLabel}
-            title={homeScreenData.service.sectionTitle}
-            description={homeScreenData.service.sectionDescription}
-            center
-          />
-
-          <StatsSection />
-
-          {/* 서비스 소개 */}
           <div className="mt-14 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-8">
-            {homeScreenData.service.items.map((service) => (
+            {servicesScreenData.section1.items.map((item) => (
               <div
-                key={service.title}
+                key={item.title}
                 className="p-8 rounded-2xl border border-gray-5/10 hover:shadow-md transition-shadow bg-white"
               >
                 <div className="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6">
-                  {service.icon}
+                  {iconMap[item.icon]}
                 </div>
-                <h3 className="t3 text-gray-9 mb-3">{service.title}</h3>
-                <p className="p4 text-gray-5">{service.description}</p>
+                <h3 className="t3 text-gray-9 mb-3">{item.title}</h3>
+                <p className="p4 text-gray-5">{item.description}</p>
               </div>
             ))}
           </div>

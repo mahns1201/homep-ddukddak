@@ -8,7 +8,7 @@ export default function StatsSection() {
           {statsData.items.map((stat) => (
             <div key={stat.label}>
               <p className="t1 text-white mb-2">{stat.value}</p>
-              <p className="p5 text-secondary">{stat.label}</p>
+              <p className="p5 text-white/70">{stat.label}</p>
             </div>
           ))}
         </div>

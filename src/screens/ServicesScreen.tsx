@@ -1,6 +1,7 @@
 import SectionTitle from "../components/ui/SectionTitle";
 import CTASection from "../sections/CTASection";
 import servicesScreenData from "../data/services-screen.json";
+import { iconMap } from "../components/ui/icons";
 
 export default function ServicesScreen() {
   return (
@@ -32,7 +33,7 @@ export default function ServicesScreen() {
                 className="p-8 rounded-2xl border border-gray-5/10 hover:shadow-md transition-shadow bg-white"
               >
                 <div className="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6">
-                  {service.icon}
+                  {iconMap[service.icon]}
                 </div>
                 <h3 className="t3 text-gray-9 mb-3">{service.title}</h3>
                 <p className="p4 text-gray-5">{service.description}</p>
